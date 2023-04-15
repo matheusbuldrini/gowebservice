@@ -1,16 +1,12 @@
 package main
 
 import (
-	"fmt"
+	"net/http"
 
-	"github.com/matheusbuldrini/gowebservice/models"
+	"github.com/matheusbuldrini/gowebservice/controllers"
 )
 
 func main() {
-	u := models.User{
-		Id:        2,
-		FirstName: "Joao",
-		LastName:  "Silva",
-	}
-	fmt.Println(u)
+	controllers.RegisterControllers()
+	http.ListenAndServe(":3000", nil)
 }
